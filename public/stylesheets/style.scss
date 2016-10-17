@@ -1,0 +1,103 @@
+$light-gray: #eee;
+$dark-green: #0A5349;
+$light-blue: #60EBD2;
+$dark-blue: #08455C;
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background: black url('/images/star_gazer.jpg') no-repeat center;
+  background-size: cover;
+}
+
+body {
+  color: white;
+  font: 20px "Open Sans", sans-serif;
+}
+h1 {
+  font-size: 50px;
+}
+.container {
+  text-align: center;
+  margin-top: 350px;
+  padding: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover, i:hover {
+  color: $light-blue;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  padding: 25px 0px;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav a {
+  font-size: 18px;
+  padding: 0px 25px;
+}
+
+i.social {
+  padding: 25px;
+  font-size: 2em;
+}
+
+p {
+  padding: 25px;
+}
+
+.fa-angle-down {
+  color: $light-blue;
+  animation: bounce 4s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0) }
+  50% { transform: translateY(+50px)  }
+}
+.about {
+  padding: 25px;
+}
+
+.project-container,
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  width: 250px;
+  height: 250px;
+  margin: 50px;
+  flex: none;
+  border: 1px solid $light-blue;
+  z-index: 1
+}
+
+.project:hover {
+  color: $dark-blue;
+  background-color: $light-blue;
+}
+
+.tech-stack i {
+  width: 150px;
+  height: 150px;
+  font-size: 4em;
+  margin: 0 25px;
+}

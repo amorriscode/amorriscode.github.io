@@ -1,0 +1,469 @@
+/* http://blog.lunarlogic.io/2016/let-your-website-cast-the-northern-lights-auroral/ */
+/* We start with setting the variables: how many stars there should be and an empty variable declaration for later */
+/* Now we just style this one 1px by 1px div to be a round dot fixed in top left corner */
+.stars {
+  position: relative;
+  top: 0;
+  display: block;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: white;
+  /* We count down from the number of stars that we chose to have: */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  /* Remember to count down. Otherwise you will end up with an infinite loop */
+  /* And with each iteration we concatenate string with another box shadow declaration.
+    We set random position for the box shadow and random size (from 1 to 2 px).
+    The last thing to add is a comma, but we need to use and unquote function to add that */
+  /* The last box shadow needs to be added without a comma.
+     After we have the whole string ready, we add it to the box-shadow as a value */
+  box-shadow: 28vw 73vh 0 1px rgba(255, 255, 255, 0.7), 88vw 70vh 0 2px rgba(255, 255, 255, 0.7), 5vw 89vh 0 2px rgba(255, 255, 255, 0.7), 24vw 59vh 0 1px rgba(255, 255, 255, 0.7), 12vw 58vh 0 2px rgba(255, 255, 255, 0.7), 79vw 80vh 0 1px rgba(255, 255, 255, 0.7), 30vw 61vh 0 1px rgba(255, 255, 255, 0.7), 2vw 39vh 0 2px rgba(255, 255, 255, 0.7), 26vw 49vh 0 1px rgba(255, 255, 255, 0.7), 47vw 56vh 0 2px rgba(255, 255, 255, 0.7), 53vw 50vh 0 1px rgba(255, 255, 255, 0.7), 56vw 44vh 0 1px rgba(255, 255, 255, 0.7), 22vw 71vh 0 1px rgba(255, 255, 255, 0.7), 99vw 32vh 0 2px rgba(255, 255, 255, 0.7), 7vw 78vh 0 2px rgba(255, 255, 255, 0.7), 92vw 95vh 0 2px rgba(255, 255, 255, 0.7), 21vw 77vh 0 1px rgba(255, 255, 255, 0.7), 46vw 3vh 0 1px rgba(255, 255, 255, 0.7), 54vw 5vh 0 1px rgba(255, 255, 255, 0.7), 66vw 81vh 0 2px rgba(255, 255, 255, 0.7), 28vw 86vh 0 2px rgba(255, 255, 255, 0.7), 2vw 42vh 0 1px rgba(255, 255, 255, 0.7), 68vw 99vh 0 1px rgba(255, 255, 255, 0.7), 11vw 30vh 0 1px rgba(255, 255, 255, 0.7), 55vw 89vh 0 1px rgba(255, 255, 255, 0.7), 50vw 15vh 0 1px rgba(255, 255, 255, 0.7), 97vw 15vh 0 2px rgba(255, 255, 255, 0.7), 86vw 96vh 0 1px rgba(255, 255, 255, 0.7), 97vw 61vh 0 2px rgba(255, 255, 255, 0.7), 62vw 53vh 0 1px rgba(255, 255, 255, 0.7), 4vw 83vh 0 2px rgba(255, 255, 255, 0.7), 77vw 63vh 0 2px rgba(255, 255, 255, 0.7), 58vw 71vh 0 2px rgba(255, 255, 255, 0.7), 42vw 47vh 0 1px rgba(255, 255, 255, 0.7), 77vw 71vh 0 2px rgba(255, 255, 255, 0.7), 48vw 20vh 0 1px rgba(255, 255, 255, 0.7), 36vw 22vh 0 2px rgba(255, 255, 255, 0.7), 56vw 30vh 0 1px rgba(255, 255, 255, 0.7), 99vw 36vh 0 2px rgba(255, 255, 255, 0.7), 68vw 19vh 0 2px rgba(255, 255, 255, 0.7), 45vw 48vh 0 1px rgba(255, 255, 255, 0.7), 19vw 10vh 0 2px rgba(255, 255, 255, 0.7), 3vw 62vh 0 2px rgba(255, 255, 255, 0.7), 20vw 6vh 0 2px rgba(255, 255, 255, 0.7), 77vw 22vh 0 1px rgba(255, 255, 255, 0.7), 75vw 67vh 0 2px rgba(255, 255, 255, 0.7), 6vw 62vh 0 2px rgba(255, 255, 255, 0.7), 78vw 87vh 0 1px rgba(255, 255, 255, 0.7), 49vw 94vh 0 2px rgba(255, 255, 255, 0.7), 17vw 32vh 0 2px rgba(255, 255, 255, 0.7), 12vw 81vh 0 1px rgba(255, 255, 255, 0.7), 38vw 74vh 0 1px rgba(255, 255, 255, 0.7), 95vw 98vh 0 1px rgba(255, 255, 255, 0.7), 48vw 74vh 0 1px rgba(255, 255, 255, 0.7), 93vw 30vh 0 2px rgba(255, 255, 255, 0.7), 32vw 65vh 0 1px rgba(255, 255, 255, 0.7), 85vw 41vh 0 2px rgba(255, 255, 255, 0.7), 68vw 62vh 0 1px rgba(255, 255, 255, 0.7), 33vw 74vh 0 2px rgba(255, 255, 255, 0.7), 52vw 19vh 0 2px rgba(255, 255, 255, 0.7), 62vw 52vh 0 2px rgba(255, 255, 255, 0.7), 12vw 67vh 0 2px rgba(255, 255, 255, 0.7), 77vw 85vh 0 2px rgba(255, 255, 255, 0.7), 18vw 77vh 0 2px rgba(255, 255, 255, 0.7), 48vw 73vh 0 1px rgba(255, 255, 255, 0.7), 73vw 93vh 0 2px rgba(255, 255, 255, 0.7), 79vw 51vh 0 1px rgba(255, 255, 255, 0.7), 89vw 38vh 0 1px rgba(255, 255, 255, 0.7), 60vw 87vh 0 1px rgba(255, 255, 255, 0.7), 22vw 49vh 0 2px rgba(255, 255, 255, 0.7), 8vw 6vh 0 1px rgba(255, 255, 255, 0.7), 3vw 20vh 0 2px rgba(255, 255, 255, 0.7), 4vw 56vh 0 1px rgba(255, 255, 255, 0.7), 36vw 44vh 0 2px rgba(255, 255, 255, 0.7), 6vw 89vh 0 2px rgba(255, 255, 255, 0.7), 52vw 37vh 0 2px rgba(255, 255, 255, 0.7), 38vw 26vh 0 0 rgba(255, 255, 255, 0.9);
+  /* Remember to count down. Otherwise you will end up with an infinite loop */ }
