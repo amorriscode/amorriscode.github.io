@@ -1,7 +1,7 @@
 /* http://blog.lunarlogic.io/2016/let-your-website-cast-the-northern-lights-auroral/ */
 /* We start with setting the variables: how many stars there should be and an empty variable declaration for later */
 $star-number: random(100);
-$current-stars: ;
+$current-stars: 0;
 
 /* Now we just style this one 1px by 1px div to be a round dot fixed in top left corner */
 .stars {

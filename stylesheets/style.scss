@@ -11,7 +11,7 @@ body {
 }
 
 html {
-  background: black url('/images/star_gazer.jpg') no-repeat center;
+  background: black url('../images/star_gazer.jpg') no-repeat center;
   background-size: cover;
 }
 
@@ -82,8 +82,9 @@ p {
 }
 
 .project {
-  width: 250px;
-  height: 250px;
+  padding: 25px;
+  width: 200px;
+  height: 200px;
   margin: 50px;
   flex: none;
   border: 1px solid $light-blue;

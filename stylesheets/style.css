@@ -5,7 +5,7 @@ body {
   margin: 0; }
 
 html {
-  background: black url("/images/star_gazer.jpg") no-repeat center;
+  background: black url("../images/star_gazer.jpg") no-repeat center;
   background-size: cover; }
 
 body {
@@ -52,11 +52,10 @@ p {
   animation: bounce 4s infinite; }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,100% {
     transform: translateY(0); }
   50% {
     transform: translateY(50px); } }
-
 .about {
   padding: 25px; }
 
@@ -67,8 +66,9 @@ p {
   justify-content: center; }
 
 .project {
-  width: 250px;
-  height: 250px;
+  padding: 25px;
+  width: 200px;
+  height: 200px;
   margin: 50px;
   flex: none;
   border: 1px solid #60EBD2;
@@ -83,3 +83,5 @@ p {
   height: 150px;
   font-size: 4em;
   margin: 0 25px; }
+
+/*# sourceMappingURL=style.css.map */
