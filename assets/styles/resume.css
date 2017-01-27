@@ -134,7 +134,7 @@ header .contact-container .contact-list li span {
 }
 
 
-/* experience */
+/* experience & education */
 .education h3,
 .experience h3 {
   font-size: 18px ;
@@ -158,13 +158,19 @@ header .contact-container .contact-list li span {
 .experience .detail {
   font-size: 14px ;
 }
+.experience .tags {
+  font-size: 12px ;
+  color: #999 ;
+}
 
 
-/* project */
+/* projects & skills */
+.skill ul li,
 .project ul li {
   font-size: 0 ;
   line-height: 16px ;
 }
+.skill h3,
 .project h3 {
   position: relative ;
   display: inline ;
@@ -174,10 +180,12 @@ header .contact-container .contact-list li span {
 .project h3::after {
   content: ' - ' ;
 }
+.skill .detail,
 .project .detail {
   display: inline ;
   font-size: 14px ;
 }
+.skill .tags,
 .project .tags {
   font-size: 12px ;
   color: #999 ;
@@ -188,7 +196,10 @@ header .contact-container .contact-list li span {
 .skill {
   margin-bottom: 0!important ;
 }
-.skill ul li {
+.skill h3::after {
+  content: ': ';
+}
+/*.skill ul li {
   height: 15px ;
 }
 .skill h3 {
@@ -210,7 +221,7 @@ header .contact-container .contact-list li span {
   width: 60% ;
   height: 100% ;
   background: #666 ;
-}
+}*/
 
 
 /* footer */
