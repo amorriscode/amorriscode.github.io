@@ -135,15 +135,18 @@ header .contact-container .contact-list li span {
 
 
 /* experience */
+.education h3,
 .experience h3 {
   font-size: 18px ;
 }
+.education .company,
 .experience .company {
   margin: 0 0 10px ;
   color: #959595 ;
   font-size: 13px ;
   font-weight: normal ;
 }
+.education .date,
 .experience .date {
   position: absolute ;
   top: 5px ;
@@ -151,6 +154,7 @@ header .contact-container .contact-list li span {
   color: #bbb ;
   font-size: 12px ;
 }
+.education .detail,
 .experience .detail {
   font-size: 14px ;
 }
