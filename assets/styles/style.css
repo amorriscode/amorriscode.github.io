@@ -1,91 +1,37 @@
 html,
 body {
   height: 100%;
-  padding: 0;
-  margin: 0; }
-
-html {
-  background: black url("../img/star_gazer.jpg") no-repeat center;
-  background-size: cover; }
+  display: grid;
+}
 
 body {
-  color: white;
-  font: 20px "Open Sans", sans-serif; }
+  color: black;
+  font: 20px "Open Sans", sans-serif; 
+}
 
 h1 {
-  font-size: 50px; }
+  font-size: 50px; 
+}
 
 .container {
   text-align: center;
-  margin-top: 350px;
-  padding: 100px; }
+  margin: auto;
+}
 
 a {
   text-decoration: none;
-  color: white; }
+  color: black; 
+}
 
 a:hover, .tech-stack i:hover {
-  color: #60EBD2; }
-
-nav {
-  position: fixed;
-  top: 0;
-  padding: 25px 0px;
-  width: 100%;
-  z-index: 2;
-  display: flex;
-  justify-content: flex-end; }
-
-nav a {
-  font-size: 18px;
-  padding: 0px 25px; }
+  color: #6f2c63; 
+}
 
 i.social {
   padding: 25px;
-  font-size: 2em; }
+  font-size: 2em; 
+}
 
 p {
-  padding: 25px; }
-
-.fa-angle-down {
-  color: #60EBD2;
-  animation: bounce 4s infinite; }
-
-@keyframes bounce {
-  0%,100% {
-    transform: translateY(0); }
-  50% {
-    transform: translateY(50px); } }
-.about {
-  padding: 25px; }
-
-.project-container,
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
-
-.project {
-  padding: 25px;
-  width: 200px;
-  height: 200px;
-  margin: 50px;
-  flex: none;
-  border: 1px solid #60EBD2;
-  z-index: 2;
-  font-size: 16px; }
-
-.project i {
-  font-size: 2em; }
-
-.project:hover {
-  color: #08455C;
-  background-color: #60EBD2; }
-
-.tech-stack i {
-  width: 150px;
-  height: 150px;
-  font-size: 4em;
-  margin: 0 25px; }
-
-/*# sourceMappingURL=style.css.map */
+  padding: 25px; 
+}
