@@ -3,6 +3,7 @@ const mainGrid = document.getElementById('main-grid');
 const brandDivider = document.getElementById('intro').getElementsByClassName('divider')[0];
 const introContainer = document.getElementById('intro').getElementsByClassName('section-container')[0];
 const aboutSection = document.getElementById('about');
+const glitches = document.getElementsByClassName('glitchable');
 
 // Change vertical scroll to horizontal
 document.addEventListener('mousewheel', event => {
@@ -39,3 +40,38 @@ document.addEventListener('mousewheel', event => {
     : 'none';
   sideNav.style['border-right'] = computedSideNavBorderRight;
 });
+
+
+// Randomize the glitches
+const getRandomZeroToMax = max => Math.floor(Math.random() * max);
+
+const randomCharacters = [
+  'A','B','C','D','E','F','G',
+  'H','I','J','K','L','M','N',
+  'O','P','Q','R','S','T','U',
+  'V','W','X','Y','Z'];
+
+setInterval(() => {
+  const randomGlitch = glitches[getRandomZeroToMax(glitches.length)];
+  const originalValue = randomGlitch.innerHTML;
+
+  // Only swap the letters sometimes
+  randomGlitch.innerHTML = (getRandomZeroToMax(100) % 2 === 0)
+    ? randomCharacters[getRandomZeroToMax(randomCharacters.length)]
+    : originalValue;
+
+  randomGlitch.style['clip-path'] = `inset(${getRandomZeroToMax(20)}px ${getRandomZeroToMax(4)}px)`;
+  randomGlitch.classList.add('glitch');
+
+  // Set back to normal letter
+  setTimeout(() => {
+    randomGlitch.innerHTML = originalValue;
+    randomGlitch.style['clip-path'] = 'none';
+  }, 100);
+  
+  // Remove glitchy CSS
+  setTimeout(() => {
+    randomGlitch.classList.remove('glitch');
+  }, 2000);
+}, 1000);
+

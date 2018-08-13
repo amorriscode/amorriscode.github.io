@@ -126,3 +126,58 @@ body {
   color: #A6F673;
   font-size: 12px;
 }
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -10px 0 #E200B9;
+  animation: glitch-anim-1 0.1s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -3px;
+  top: 2px;
+  text-shadow: -1px 0 #61FF00;
+  animation: glitch-anim-2 0.2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: inset(20px 10px);
+  }
+  60% {
+    clip-path: inset(8px 13px);
+  }
+  80% {
+    clip-path: inset(10px 100px);
+  }
+  100% {
+    clip-path: inset(5px 12px);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: inset(100px 40px);
+  }
+  20% {
+    clip-path: inset(4px 6px);
+  }
+  100% {
+    clip-path: inset(150px 1px);
+  }
+}
