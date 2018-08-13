@@ -1,35 +1,128 @@
 html,
 body {
+  margin: 0;
   height: 100%;
-  display: grid;
-  color: #2F2F2F;
-  font: 20px "Open Sans", sans-serif; 
-  background-color: #F4FAF1;
+  color: #F4FAF1;
+  font: 20px "Roboto", sans-serif; 
+  background: #F4FAF1;
 }
 
-.container {
-  text-align: center;
+#side-nav {
+  position: fixed;
+  background: #1F1837;
+  height: 100vh;
+  width: 40px;
+  border-right: none;
+  z-index: 1;
+  padding: 5px;
+}
+
+#side-nav .grid {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 50% 50%;
+  justify-items: center;
+}
+
+#side-nav .grid .social {
+  align-self: flex-end;
+  display: grid;
+  grid-template-rows: min-content min-content;
+  margin-bottom: 25px;
+}
+
+#side-nav .grid .social a {
+  color: #F4FAF1;
+  text-decoration: none;
+}
+
+#side-nav .grid .social a:hover {
+  color: #A6F673;
+}
+
+#main-grid {
+  display: grid;
+  grid-template-areas: "intro about interests values contact";
+}
+
+#main-grid > section {
+  width: 100vw;
+  display: grid;
+}
+
+.section-container {
   margin: auto;
 }
 
-h1 {
-  font-size: 50px;
+#intro {
+  height: 100vh;
+  background: #1F1837;
+  background: linear-gradient(145deg, rgba(31,24,55,1) 0%, rgba(101,40,90,1) 100%);
 }
 
-a {
-  text-decoration: none;
-  color: #2F2F2F; 
+#intro .section-container {
+  position: fixed;
+  left: 25vw;
+  bottom: 25vh;
 }
 
-a:hover, .tech-stack i:hover {
-  color: #6f2c63; 
-}
-
-i.social {
+#intro .section-container div {
   padding: 25px;
-  font-size: 2em; 
 }
 
-p {
-  padding: 25px; 
+#intro .brand {
+  margin-top: 150px;
+  padding-bottom: 50px !important;
+  position: relative;
+  font-weight: lighter;
+  font-size: 16px;
+  display: grid;
+  grid-template-areas: "amorris divider code";
+  grid-template-columns: max-content 2px max-content;
+}
+
+#intro .brand .amorris {
+  grid-area: amorris;
+}
+
+#intro .brand .code {
+  grid-area: code;
+}
+
+#intro .brand .divider {
+  padding: 0;
+  top: 0px;
+  width: 2px;
+  grid-area: divider;
+  display: inline-block;
+  min-height: 20px !important;
+  background: #A6F673;
+  position: absolute;
+}
+
+#intro .positive-impact,
+#intro .made-with-code {
+  letter-spacing: 8px;
+  font-size: 35px;
+}
+
+#intro .positive-impact .triangle {
+  transform: rotate(180deg);
+}
+
+#intro .positive-impact .triangle,
+#intro .made-with-code .triangle {
+  width: 30px;
+  stroke: #A6F673;
+  stroke-width: 10;
+  fill: none;
+}
+
+.go-for-a-scroll {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 12px;
+  color: #A6F673;
+  font-size: 12px;
 }
