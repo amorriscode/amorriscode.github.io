@@ -45,29 +45,53 @@ document.addEventListener('mousewheel', event => {
   sideNav.style['border-right'] = computedSideNavBorderRight;
 });
 
-const randomCharacters = [
+const possibleCharacters = [
   'A','B','C','D','E','F','G',
   'H','I','J','K','L','M','N',
   'O','P','Q','R','S','T','U',
   'V','W','X','Y','Z'];
+
+const possibleClipPaths = [
+  'polygon(0 38%, 66% 44%, 100% 82%, 0 63%)',
+  'polygon(0 42%, 100% 42%, 100% 88%, 0 88%)',
+  'polygon(0 38%, 100% 0, 100% 42%, 0 63%)',
+  'polygon(0 40%, 100% 40%, 100% 60%, 0 60%)',
+  'polygon(0 68%, 21% 67%, 31% 100%, 0 100%)',
+  'polygon(45% 0, 100% 0%, 100% 100%, 44% 100%)',
+]
 
 setInterval(() => {
   const randomGlitch = glitches[getRandomZeroToMax(glitches.length)];
   const originalValue = randomGlitch.innerHTML;
 
   // Only swap the letters sometimes
-  randomGlitch.innerHTML = (getRandomZeroToMax(100) % 2 === 0)
-    ? randomCharacters[getRandomZeroToMax(randomCharacters.length)]
-    : originalValue;
+  let letterSwapper;
+  if (getRandomZeroToMax(100) % 2 === 0) {
+    letterSwapper = setInterval(() => { 
+      randomGlitch.innerHTML = possibleCharacters[getRandomZeroToMax(possibleCharacters.length)];
+     }, 50);
+  }
 
-  randomGlitch.style['clip-path'] = `inset(${getRandomZeroToMax(20)}px ${getRandomZeroToMax(4)}px)`;
+  const clipPathSwapper = setInterval(() => {
+    randomGlitch.style.setProperty('clip-path', possibleClipPaths[getRandomZeroToMax(possibleClipPaths.length)]);
+  }, 100)
+
+  // Randomize the positioning of the glitch
+  randomGlitch.style.setProperty('--glitch1-random-x', `${getRandomZeroToMax(10)}px`);
+  randomGlitch.style.setProperty('--glitch1-random-y', `${getRandomZeroToMax(10)}px`);
+  randomGlitch.style.setProperty('--glitch2-random-x', `-${getRandomZeroToMax(10)}px`);
+  randomGlitch.style.setProperty('--glitch2-random-y', `-${getRandomZeroToMax(10)}px`);
+
   randomGlitch.classList.add('glitch');
 
   // Set back to normal letter
   setTimeout(() => {
+    clearInterval(letterSwapper);
+    clearInterval(clipPathSwapper);
+
     randomGlitch.innerHTML = originalValue;
-    randomGlitch.style['clip-path'] = 'none';
-  }, 100);
+    randomGlitch.style.setProperty('clip-path', 'none');
+  }, 300);
   
   // Remove glitchy CSS
   setTimeout(() => {
@@ -77,6 +101,6 @@ setInterval(() => {
 
 // Shitty lights
 setInterval(() => {
-  brandDivider.style['box-shadow'] = `0 0 ${getRandomZeroToMax(10)}px 0px #61FF00`;
+  brandDivider.style.setProperty('box-shadow', `0 0 ${getRandomZeroToMax(10)}px 0px #61FF00`);
 }, 50);
 

@@ -1,3 +1,10 @@
+:root {
+  --glitch1-random-x: 0;
+  --glitch1-random-y: 0;
+  --glitch2-random-x: 0;
+  --glitch2-random-y: 0;
+}
+
 html,
 body {
   margin: 0;
@@ -144,16 +151,17 @@ body {
 }
 
 .glitch::before {
-  left: 2px;
+  left: var(--glitch1-random-x);
+  top: var(--glitch1-random-y);
   text-shadow: -10px 0 #E200B9;
-  animation: glitch-anim-1 0.1s infinite linear alternate-reverse;
+  animation: glitch-anim-1 0.1s infinite linear forwards;
 }
 
 .glitch::after {
-  left: -3px;
-  top: 2px;
+  left: var(--glitch2-random-x);
+  top: var(--glitch2-random-y);
   text-shadow: -1px 0 #61FF00;
-  animation: glitch-anim-2 0.2s infinite linear alternate-reverse;
+  animation: glitch-anim-2 0.2s 4 linear forwards;
 }
 
 @keyframes glitch-anim-1 {
