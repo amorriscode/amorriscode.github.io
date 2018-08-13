@@ -50,7 +50,8 @@ const possibleCharacters = [
   'A','B','C','D','E','F','G',
   'H','I','J','K','L','M','N',
   'O','P','Q','R','S','T','U',
-  'V','W','X','Y','Z'];
+  'V','W','X','Y','Z'
+];
 
 const possibleClipPaths = [
   'polygon(0 38%, 66% 44%, 100% 82%, 0 63%)',
@@ -59,7 +60,7 @@ const possibleClipPaths = [
   'polygon(0 40%, 100% 40%, 100% 60%, 0 60%)',
   'polygon(0 68%, 21% 67%, 31% 100%, 0 100%)',
   'polygon(45% 0, 100% 0%, 100% 100%, 44% 100%)',
-]
+];
 
 setInterval(() => {
   const randomGlitch = glitches[getRandomZeroToMax(glitches.length)];
@@ -97,7 +98,7 @@ setInterval(() => {
   // Remove glitchy CSS
   setTimeout(() => {
     randomGlitch.classList.remove('glitch');
-  }, 2000);
+  }, getRandomZeroToMax(5000));
 }, 1000);
 
 // Shitty lights
