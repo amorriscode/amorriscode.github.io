@@ -4,6 +4,10 @@ const brandDivider = document.getElementById('intro').getElementsByClassName('di
 const introContainer = document.getElementById('intro').getElementsByClassName('section-container')[0];
 const aboutSection = document.getElementById('about');
 const glitches = document.getElementsByClassName('glitchable');
+const triangles = document.getElementsByClassName('triangle');
+
+// Randomize
+const getRandomZeroToMax = max => Math.floor(Math.random() * max);
 
 // Change vertical scroll to horizontal
 document.addEventListener('mousewheel', event => {
@@ -41,10 +45,6 @@ document.addEventListener('mousewheel', event => {
   sideNav.style['border-right'] = computedSideNavBorderRight;
 });
 
-
-// Randomize the glitches
-const getRandomZeroToMax = max => Math.floor(Math.random() * max);
-
 const randomCharacters = [
   'A','B','C','D','E','F','G',
   'H','I','J','K','L','M','N',
@@ -74,4 +74,9 @@ setInterval(() => {
     randomGlitch.classList.remove('glitch');
   }, 2000);
 }, 1000);
+
+// Shitty lights
+setInterval(() => {
+  brandDivider.style['box-shadow'] = `0 0 ${getRandomZeroToMax(10)}px 0px #61FF00`;
+}, 50);
 
