@@ -3,6 +3,7 @@ const mainGrid = document.getElementById('main-grid');
 const brandDivider = document.getElementById('intro').getElementsByClassName('divider')[0];
 const introContainer = document.getElementById('intro').getElementsByClassName('section-container')[0];
 const aboutSection = document.getElementById('about');
+const goForAScroll = document.getElementsByClassName('go-for-a-scroll')[0];
 const glitches = document.getElementsByClassName('glitchable');
 const triangles = document.getElementsByClassName('triangle');
 
@@ -102,5 +103,6 @@ setInterval(() => {
 // Shitty lights
 setInterval(() => {
   brandDivider.style.setProperty('box-shadow', `0 0 ${getRandomZeroToMax(10)}px 0px #61FF00`);
+  goForAScroll.style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
 }, 50);
 
