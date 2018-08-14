@@ -1,13 +1,17 @@
 const sideNav = document.getElementById('side-nav');
 const mainGrid = document.getElementById('main-grid');
 
-const brandDivider = document.getElementById('intro').getElementsByClassName('divider')[0];
-const introContainer = document.getElementById('intro').getElementsByClassName('section-container')[0];
+const introSection = document.getElementById('intro');
+const brandDivider = introSection.getElementsByClassName('divider')[0];
+const introContainer = introSection.getElementsByClassName('section-container')[0];
+const brandCodeContainer = introContainer.getElementsByClassName('code')[0];
 const positiveImpactContainer = introContainer.getElementsByClassName('positive-impact')[0];
 const madeWithCodeContainer = introContainer.getElementsByClassName('made-with-code')[0];
 const triangles = document.getElementsByClassName('triangle');
 
 const aboutSection = document.getElementById('about');
+const aboutTitle = aboutSection.getElementsByClassName('letter');
+const aboutContent = aboutSection.getElementsByClassName('content');
 
 const goForAScroll = document.getElementById('go-for-a-scroll');
 const goForAScrollLetters = goForAScroll.getElementsByClassName('letter');
@@ -27,23 +31,29 @@ document.addEventListener('mousewheel', event => {
   const computedHeight = (window.pageXOffset !== 0)
     ? `${window.pageXOffset * 2}px`
     : '20px';
-  brandDivider.style.height = computedHeight;
+  brandDivider.style.setProperty('height', computedHeight);
 
   // Adjust divider position from top
   const computedDividerPosition = (window.pageXOffset !== 0)
     ? `-${window.pageXOffset - 10}px`
     : '0px';
-  brandDivider.style.top = computedDividerPosition;
+  brandDivider.style.setProperty('top', computedDividerPosition);
 
   // Move the intro out of the way
   const computedIntroContainerPosition = (window.pageXOffset > 967)
     ? `${aboutSection.offsetLeft - window.pageXOffset - 112}px`
     : '25vw';
-  introContainer.style.left = computedIntroContainerPosition;
+  introContainer.style.setProperty('left', computedIntroContainerPosition);
 
   // Clip go for a scroll section
   const goForAScrollClipPath = `inset(0 ${window.pageXOffset}px 0 0)`;
   goForAScroll.style.setProperty('clip-path', goForAScrollClipPath);
+
+  // Clip code in brand section
+  const brandClipPath = (window.pageXOffset < 967)
+    ? `inset(0 ${window.pageXOffset - (brandCodeContainer.offsetLeft + 802)}px 0 0)`
+    : 'inset(0 85% 0 0)';
+  brandCodeContainer.style.setProperty('clip-path', brandClipPath);
 
   // Clip intro section
   const introClipPath = (window.pageXOffset < 967)
@@ -56,13 +66,34 @@ document.addEventListener('mousewheel', event => {
   const computedSideNavPositioning = (window.pageXOffset < window.innerWidth - 50)
     ? `${window.pageXOffset - (window.innerWidth - 50)}px`
     : '0';
-  sideNav.style.left = computedSideNavPositioning;
+  sideNav.style.setProperty('left', computedSideNavPositioning);
 
   const computedSideNavBorderRight = (computedSideNavPositioning === '0')
     ? '2px solid #A6F673'
     : 'none';
-  sideNav.style['border-right'] = computedSideNavBorderRight;
+  sideNav.style.setProperty('border-right', computedSideNavBorderRight);
 });
+
+  // About Me offsets
+  const controller = new ScrollMagic.Controller({ vertical: false });
+  const aboutMeTimeline = new TimelineMax();
+  aboutMeTimeline.add('start', 1)
+    .add(TweenMax.fromTo(aboutTitle[0], 1, { x: +25 }, { x: -500 }), 0)     // A
+    .add(TweenMax.fromTo(aboutTitle[1], 1, { x: +80 }, { x: -800 }), 0)     // B
+    .add(TweenMax.fromTo(aboutTitle[2], 1, { x: +105 }, { x: -1000 }), 0)   // O
+    .add(TweenMax.fromTo(aboutTitle[3], 1, { x: +55 }, { x: -850 }), 0)     // U
+    .add(TweenMax.fromTo(aboutTitle[4], 1, { x: +150 }, { x: -1300 }), 0)   // T
+    .add(TweenMax.fromTo(aboutTitle[5], 1, { x: +25 }, { x: -500 }), 0)     // M
+    .add(TweenMax.fromTo(aboutTitle[6], 1, { x: +350 }, { x: -2000 }), 0);  // E
+
+  const aboutMeTitleScene = new ScrollMagic.Scene({ triggerElement: '#intro.section-container', duration: 15000 })
+    .setTween(aboutMeTimeline)
+    .addTo(controller);
+
+  const contentTween = TweenMax.from(aboutContent, 1, { y: 500 });
+  const aboutMeContentScene = new ScrollMagic.Scene({ triggerElement: '#about', duration: 500 })
+    .setTween(contentTween)
+    .addTo(controller);
 
 const possibleCharacters = [
   'A','B','C','D','E','F','G',

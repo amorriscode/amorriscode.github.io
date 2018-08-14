@@ -62,6 +62,25 @@ body {
   margin: auto;
 }
 
+.section-container.grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  position: relative;
+}
+
+.section-container > .grid-item {
+  padding: 100px;
+}
+
+.section-container .title {
+  font: 120px "Alegreya";
+  font-weight: bolder;
+}
+
+.text-black {
+  color: #2F2F2F !important;
+}
+
 #intro {
   height: 100vh;
   background: #1F1837;
@@ -189,4 +208,59 @@ body {
   100% {
     clip-path: inset(150px 1px);
   }
+}
+
+#about {
+  background: #F4FAF1;
+}
+
+#about .title .letter {
+  position: absolute;
+}
+
+#about .title .letter.a {
+  top: -25px;
+  left: 98px;
+}
+
+#about .title .letter.b {
+  top: 22px;
+  left: 212px;
+}
+
+#about .title .letter.o {
+  top: -15px;
+  left: 315px;
+}
+
+#about .title .letter.u {
+  top: 30px;
+  left: 440px;
+}
+
+#about .title .letter.t {
+  top: 11px;
+  left: 555px;
+}
+
+#about .title .letter.m {
+  top: 155px;
+  left: 165px;
+}
+
+#about .title .letter.e {
+  top: 125px;
+  left: 300px;
+}
+
+#interests {
+  background: #2F2F2F;
+}
+
+#values {
+  background: #F4FAF1;
+}
+
+#contact {
+  background: #2F2F2F;
 }
