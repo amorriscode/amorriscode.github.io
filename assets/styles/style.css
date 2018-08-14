@@ -126,7 +126,7 @@ body {
   fill: none;
 }
 
-.go-for-a-scroll {
+#go-for-a-scroll {
   position: fixed;
   bottom: 0;
   right: 0;

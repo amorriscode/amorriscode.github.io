@@ -1,11 +1,18 @@
 const sideNav = document.getElementById('side-nav');
 const mainGrid = document.getElementById('main-grid');
+
 const brandDivider = document.getElementById('intro').getElementsByClassName('divider')[0];
 const introContainer = document.getElementById('intro').getElementsByClassName('section-container')[0];
-const aboutSection = document.getElementById('about');
-const goForAScroll = document.getElementsByClassName('go-for-a-scroll')[0];
-const glitches = document.getElementsByClassName('glitchable');
+const positiveImpactContainer = introContainer.getElementsByClassName('positive-impact')[0];
+const madeWithCodeContainer = introContainer.getElementsByClassName('made-with-code')[0];
 const triangles = document.getElementsByClassName('triangle');
+
+const aboutSection = document.getElementById('about');
+
+const goForAScroll = document.getElementById('go-for-a-scroll');
+const goForAScrollLetters = goForAScroll.getElementsByClassName('letter');
+
+const glitchables = document.getElementsByClassName('glitchable');
 
 // Randomize
 const getRandomZeroToMax = max => Math.floor(Math.random() * max);
@@ -29,10 +36,21 @@ document.addEventListener('mousewheel', event => {
   brandDivider.style.top = computedDividerPosition;
 
   // Move the intro out of the way
-  const computerIntroContainerPosition = (window.pageXOffset > 967)
+  const computedIntroContainerPosition = (window.pageXOffset > 967)
     ? `${aboutSection.offsetLeft - window.pageXOffset - 112}px`
     : '25vw';
-  introContainer.style.left = computerIntroContainerPosition;
+  introContainer.style.left = computedIntroContainerPosition;
+
+  // Clip go for a scroll section
+  const goForAScrollClipPath = `inset(0 ${window.pageXOffset}px 0 0)`;
+  goForAScroll.style.setProperty('clip-path', goForAScrollClipPath);
+
+  // Clip intro section
+  const introClipPath = (window.pageXOffset < 967)
+    ? `inset(0 ${window.pageXOffset - (introContainer.offsetLeft + 18)}px 0 0)`
+    : 'inset(0 85% 0 0)';
+  positiveImpactContainer.style.setProperty('clip-path', introClipPath);
+  madeWithCodeContainer.style.setProperty('clip-path', introClipPath);
 
   // Adjust the side nav positioning
   const computedSideNavPositioning = (window.pageXOffset < window.innerWidth - 50)
@@ -63,7 +81,7 @@ const possibleClipPaths = [
 ];
 
 setInterval(() => {
-  const randomGlitch = glitches[getRandomZeroToMax(glitches.length)];
+  const randomGlitch = glitchables[getRandomZeroToMax(glitchables.length)];
   const originalValue = randomGlitch.innerHTML;
 
   // Only swap the letters sometimes
@@ -106,4 +124,28 @@ setInterval(() => {
   brandDivider.style.setProperty('box-shadow', `0 0 ${getRandomZeroToMax(10)}px 0px #61FF00`);
   goForAScroll.style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
 }, 50);
+
+const neonLetterColors = ['#A6F673', 'black'];
+
+setInterval(() => {
+  const deadLetter = goForAScrollLetters[getRandomZeroToMax(goForAScrollLetters.length - 1)];
+
+  const flickeringLetter = setInterval(() => {
+    const color = neonLetterColors[getRandomZeroToMax(neonLetterColors.length)];
+    const textShadow = (color !== 'black')
+      ? `0 0 ${getRandomZeroToMax(10)}px #61FF00`
+      : 'none';
+
+    deadLetter.style.setProperty('color', color);
+    deadLetter.style.setProperty('text-shadow', textShadow);
+  }, getRandomZeroToMax(100));
+
+  setTimeout(() => {
+    clearTimeout(flickeringLetter);
+
+    deadLetter.style.setProperty('color', neonLetterColors[0]);
+    deadLetter.style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
+  }, 1000);
+  
+}, getRandomZeroToMax(4000));
 
