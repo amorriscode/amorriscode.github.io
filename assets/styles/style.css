@@ -11,7 +11,7 @@ body {
   height: 100%;
   color: #F4FAF1;
   font: 20px "Roboto", sans-serif; 
-  background: #F4FAF1;
+  background: #2F2F2F;
 }
 
 #side-nav {
@@ -211,7 +211,7 @@ body {
 }
 
 #about {
-  background: #F4FAF1;
+  /* background: #F4FAF1; */
 }
 
 #about .title .letter {
@@ -258,7 +258,7 @@ body {
 }
 
 #values {
-  background: #F4FAF1;
+  background: #2F2F2F;
 }
 
 #contact {

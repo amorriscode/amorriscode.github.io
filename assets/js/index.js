@@ -4,19 +4,20 @@ const mainGrid = document.getElementById('main-grid');
 const introSection = document.getElementById('intro');
 const brandDivider = introSection.getElementsByClassName('divider')[0];
 const introContainer = introSection.getElementsByClassName('section-container')[0];
+const brandAmorrisContainer = introContainer.getElementsByClassName('amorris')[0];
 const brandCodeContainer = introContainer.getElementsByClassName('code')[0];
 const positiveImpactContainer = introContainer.getElementsByClassName('positive-impact')[0];
 const madeWithCodeContainer = introContainer.getElementsByClassName('made-with-code')[0];
 const triangles = document.getElementsByClassName('triangle');
+const goForAScroll = document.getElementById('go-for-a-scroll');
+const goForAScrollLetters = goForAScroll.getElementsByClassName('letter');
+const glitchables = document.getElementsByClassName('glitchable');
 
 const aboutSection = document.getElementById('about');
 const aboutTitle = aboutSection.getElementsByClassName('letter');
 const aboutContent = aboutSection.getElementsByClassName('content');
 
-const goForAScroll = document.getElementById('go-for-a-scroll');
-const goForAScrollLetters = goForAScroll.getElementsByClassName('letter');
-
-const glitchables = document.getElementsByClassName('glitchable');
+const contactSection = document.getElementById('contact');
 
 // Randomize
 const getRandomZeroToMax = max => Math.floor(Math.random() * max);
@@ -76,8 +77,8 @@ document.addEventListener('mousewheel', event => {
 
   // About Me offsets
   const controller = new ScrollMagic.Controller({ vertical: false });
-  const aboutMeTimeline = new TimelineMax();
-  aboutMeTimeline.add('start', 1)
+  const aboutTimeline = new TimelineMax();
+  aboutTimeline.add('start', 1)
     .add(TweenMax.fromTo(aboutTitle[0], 1, { x: +25 }, { x: -500 }), 0)     // A
     .add(TweenMax.fromTo(aboutTitle[1], 1, { x: +80 }, { x: -800 }), 0)     // B
     .add(TweenMax.fromTo(aboutTitle[2], 1, { x: +105 }, { x: -1000 }), 0)   // O
@@ -86,13 +87,19 @@ document.addEventListener('mousewheel', event => {
     .add(TweenMax.fromTo(aboutTitle[5], 1, { x: +25 }, { x: -500 }), 0)     // M
     .add(TweenMax.fromTo(aboutTitle[6], 1, { x: +350 }, { x: -2000 }), 0);  // E
 
-  const aboutMeTitleScene = new ScrollMagic.Scene({ triggerElement: '#intro.section-container', duration: 15000 })
-    .setTween(aboutMeTimeline)
+  const aboutTitleScene = new ScrollMagic.Scene({ triggerElement: '#intro.section-container', duration: 15000 })
+    .setTween(aboutTimeline)
     .addTo(controller);
 
-  const contentTween = TweenMax.from(aboutContent, 1, { y: 500 });
+  // Tween About Me content in and fade intro text
+  const aboutContentTimeline = new TimelineMax();
+  aboutContentTimeline.add('start', 1)
+    .add(TweenMax.from(aboutContent, 1, { y: 500 }), 0)
+    .add(TweenMax.to(brandAmorrisContainer, 1, { opacity: 0 }).delay(1), 0)
+    .add(TweenMax.to(positiveImpactContainer, 1, { opacity: 0 }).delay(1), 0)
+    .add(TweenMax.to(madeWithCodeContainer, 1, { opacity: 0 }).delay(1), 0);
   const aboutMeContentScene = new ScrollMagic.Scene({ triggerElement: '#about', duration: 500 })
-    .setTween(contentTween)
+    .setTween(aboutContentTimeline)
     .addTo(controller);
 
 const possibleCharacters = [
