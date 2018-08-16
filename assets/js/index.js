@@ -14,7 +14,8 @@ const goForAScrollLetters = goForAScroll.getElementsByClassName('letter');
 const glitchables = document.getElementsByClassName('glitchable');
 
 const aboutSection = document.getElementById('about');
-const aboutTitle = aboutSection.getElementsByClassName('letter');
+const aboutTitleClips = aboutSection.getElementsByClassName('title')[0].getElementsByClassName('clip');
+const aboutTitleParentLetters = aboutTitleClips[0].getElementsByClassName('letter');
 const aboutContent = aboutSection.getElementsByClassName('content');
 
 const contactSection = document.getElementById('contact');
@@ -69,31 +70,25 @@ document.addEventListener('mousewheel', event => {
     : '0';
   sideNav.style.setProperty('left', computedSideNavPositioning);
 
-  const computedSideNavBorderRight = (computedSideNavPositioning === '0')
-    ? '2px solid #A6F673'
-    : 'none';
-  sideNav.style.setProperty('border-right', computedSideNavBorderRight);
+  // Made the divider absolutely positioned
+  if (computedSideNavPositioning === '0') {
+    brandDivider.style.setProperty('position', 'fixed');
+    brandDivider.style.setProperty('left', '50px');
+  } else {
+    brandDivider.style.setProperty('left', '0');
+    brandDivider.style.setProperty('position', 'absolute');
+  }
 });
 
-  // About Me offsets
+  // Scroll Tween Controller
   const controller = new ScrollMagic.Controller({ vertical: false });
-  const aboutTimeline = new TimelineMax();
-  aboutTimeline.add('start', 1)
-    .add(TweenMax.fromTo(aboutTitle[0], 1, { x: +25 }, { x: -500 }), 0)     // A
-    .add(TweenMax.fromTo(aboutTitle[1], 1, { x: +80 }, { x: -800 }), 0)     // B
-    .add(TweenMax.fromTo(aboutTitle[2], 1, { x: +105 }, { x: -1000 }), 0)   // O
-    .add(TweenMax.fromTo(aboutTitle[3], 1, { x: +55 }, { x: -850 }), 0)     // U
-    .add(TweenMax.fromTo(aboutTitle[4], 1, { x: +150 }, { x: -1300 }), 0)   // T
-    .add(TweenMax.fromTo(aboutTitle[5], 1, { x: +25 }, { x: -500 }), 0)     // M
-    .add(TweenMax.fromTo(aboutTitle[6], 1, { x: +350 }, { x: -2000 }), 0);  // E
-
-  const aboutTitleScene = new ScrollMagic.Scene({ triggerElement: '#intro.section-container', duration: 15000 })
-    .setTween(aboutTimeline)
-    .addTo(controller);
 
   // Tween About Me content in and fade intro text
   const aboutContentTimeline = new TimelineMax();
   aboutContentTimeline.add('start', 1)
+    .add(TweenMax.from(aboutTitleClips[1], 1, { y: -29, opacity: 0 }), 0)
+    .add(TweenMax.from(aboutTitleClips[2], 1, { y: -58, opacity: 0 }), 0)
+    .add(TweenMax.from(aboutTitleClips[3], 1, { y: -86, opacity: 0 }), 0)
     .add(TweenMax.from(aboutContent, 1, { y: 500 }), 0)
     .add(TweenMax.to(brandAmorrisContainer, 1, { opacity: 0 }).delay(1), 0)
     .add(TweenMax.to(positiveImpactContainer, 1, { opacity: 0 }).delay(1), 0)
@@ -161,28 +156,36 @@ setInterval(() => {
 setInterval(() => {
   brandDivider.style.setProperty('box-shadow', `0 0 ${getRandomZeroToMax(10)}px 0px #61FF00`);
   goForAScroll.style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
+  aboutTitleClips[0].style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
 }, 50);
 
-const neonLetterColors = ['#A6F673', 'black'];
+const neonLetterColors = ['#A6F673', '#1F1837'];
 
 setInterval(() => {
-  const deadLetter = goForAScrollLetters[getRandomZeroToMax(goForAScrollLetters.length - 1)];
+  const goForAScrollDeadLetter = goForAScrollLetters[getRandomZeroToMax(goForAScrollLetters.length - 1)];
+  const aboutTitleParentDeadLetter = aboutTitleParentLetters[getRandomZeroToMax(aboutTitleParentLetters.length - 1)];
 
   const flickeringLetter = setInterval(() => {
     const color = neonLetterColors[getRandomZeroToMax(neonLetterColors.length)];
-    const textShadow = (color !== 'black')
+    const textShadow = (color !== '#1F1837')
       ? `0 0 ${getRandomZeroToMax(10)}px #61FF00`
       : 'none';
 
-    deadLetter.style.setProperty('color', color);
-    deadLetter.style.setProperty('text-shadow', textShadow);
+    goForAScrollDeadLetter.style.setProperty('color', color);
+    goForAScrollDeadLetter.style.setProperty('text-shadow', textShadow);
+
+    aboutTitleParentDeadLetter.style.setProperty('color', color);
+    aboutTitleParentDeadLetter.style.setProperty('text-shadow', textShadow);
   }, getRandomZeroToMax(100));
 
   setTimeout(() => {
     clearTimeout(flickeringLetter);
+  
+    goForAScrollDeadLetter.style.setProperty('color', neonLetterColors[0]);
+    goForAScrollDeadLetter.style.removeProperty('text-shadow');
 
-    deadLetter.style.setProperty('color', neonLetterColors[0]);
-    deadLetter.style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
+    aboutTitleParentDeadLetter.style.setProperty('color', neonLetterColors[0]);
+    aboutTitleParentDeadLetter.style.removeProperty('text-shadow');
   }, 1000);
   
 }, getRandomZeroToMax(4000));

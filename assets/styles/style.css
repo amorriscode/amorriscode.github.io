@@ -11,16 +11,15 @@ body {
   height: 100%;
   color: #F4FAF1;
   font: 20px "Roboto", sans-serif; 
-  background: #2F2F2F;
+  background: #1F1837;
 }
 
 #side-nav {
   position: fixed;
-  background: #1F1837;
+  background: #161616;
   height: 100vh;
   width: 40px;
   border-right: none;
-  z-index: 1;
   padding: 5px;
   left: -50px;
 }
@@ -46,6 +45,7 @@ body {
 
 #side-nav .grid .social a:hover {
   color: #A6F673;
+  text-shadow: 0 0 5px #61FF00;
 }
 
 #main-grid {
@@ -73,8 +73,42 @@ body {
 }
 
 .section-container .title {
-  font: 120px "Alegreya";
+  justify-self: end;
+  font-size: 55px;
+  letter-spacing: -2px;
   font-weight: bolder;
+  position: relative;
+}
+
+.section-container .title .hidden {
+  opacity: 0;
+}
+
+.section-container .title .clip.parent {
+  color: #A6F673;
+  clip-path: inset(0 -5% 0 -5%);
+  top: 100px;
+  z-index: 1;
+}
+
+.section-container .title .clip {
+  position: absolute;
+  clip-path: inset(50% -5% 0 -5%);
+  color: #1F1837;
+  -webkit-text-stroke: 1px #A6F673;
+  text-shadow: 0 0 10px #61FF00;
+}
+
+.section-container .title .clip.one {
+  top: 129px;
+}
+
+.section-container .title .clip.two {
+  top: 158px;
+}
+
+.section-container .title .clip.three {
+  top: 187px;
 }
 
 .text-black {
@@ -84,7 +118,7 @@ body {
 #intro {
   height: 100vh;
   background: #1F1837;
-  background: linear-gradient(145deg, rgba(31,24,55,1) 0%, rgba(101,40,90,1) 100%);
+  background: linear-gradient(270deg, rgba(31,24,55,1) 0%, rgba(101,40,90,1) 100%);
 }
 
 #intro .section-container {
@@ -211,56 +245,17 @@ body {
 }
 
 #about {
-  /* background: #F4FAF1; */
-}
-
-#about .title .letter {
-  position: absolute;
-}
-
-#about .title .letter.a {
-  top: -25px;
-  left: 98px;
-}
-
-#about .title .letter.b {
-  top: 22px;
-  left: 212px;
-}
-
-#about .title .letter.o {
-  top: -15px;
-  left: 315px;
-}
-
-#about .title .letter.u {
-  top: 30px;
-  left: 440px;
-}
-
-#about .title .letter.t {
-  top: 11px;
-  left: 555px;
-}
-
-#about .title .letter.m {
-  top: 155px;
-  left: 165px;
-}
-
-#about .title .letter.e {
-  top: 125px;
-  left: 300px;
+  z-index: -1;
 }
 
 #interests {
-  background: #2F2F2F;
+  z-index: -1;
 }
 
 #values {
-  background: #2F2F2F;
+  z-index: -1;
 }
 
 #contact {
-  background: #2F2F2F;
+  z-index: -1;
 }
