@@ -19,6 +19,9 @@ const aboutTitleParentLetters = aboutTitleClips[0].getElementsByClassName('lette
 const aboutContent = aboutSection.getElementsByClassName('content');
 
 const contactSection = document.getElementById('contact');
+const contactTitleClips = contactSection.getElementsByClassName('title')[0].getElementsByClassName('clip');
+const contactTitleParentLetters = contactTitleClips[0].getElementsByClassName('letter');
+const contactContent = contactSection.getElementsByClassName('content');
 
 // Randomize
 const getRandomZeroToMax = max => Math.floor(Math.random() * max);
@@ -97,6 +100,19 @@ document.addEventListener('mousewheel', event => {
     .setTween(aboutContentTimeline)
     .addTo(controller);
 
+  const contactContentTimeline = new TimelineMax();
+  contactContentTimeline.add('start', 1)
+    .add(TweenMax.from(contactTitleClips[1], 1, { y: -29, opacity: 0 }), 0)
+    .add(TweenMax.from(contactTitleClips[2], 1, { y: -58, opacity: 0 }), 0)
+    .add(TweenMax.from(contactTitleClips[3], 1, { y: -86, opacity: 0 }), 0)
+    .add(TweenMax.from(contactContent, 1, { y: 500 }), 0)
+    .add(TweenMax.to(brandAmorrisContainer, 1, { opacity: 0 }).delay(1), 0)
+    .add(TweenMax.to(positiveImpactContainer, 1, { opacity: 0 }).delay(1), 0)
+    .add(TweenMax.to(madeWithCodeContainer, 1, { opacity: 0 }).delay(1), 0);
+  const contactMeContentScene = new ScrollMagic.Scene({ triggerElement: '#contact', duration: 500 })
+    .setTween(contactContentTimeline)
+    .addTo(controller);
+
 const possibleCharacters = [
   'A','B','C','D','E','F','G',
   'H','I','J','K','L','M','N',
@@ -157,6 +173,7 @@ setInterval(() => {
   brandDivider.style.setProperty('box-shadow', `0 0 ${getRandomZeroToMax(10)}px 0px #61FF00`);
   goForAScroll.style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
   aboutTitleClips[0].style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
+  contactTitleClips[0].style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
 }, 50);
 
 const neonLetterColors = ['#A6F673', '#1F1837'];
@@ -164,6 +181,7 @@ const neonLetterColors = ['#A6F673', '#1F1837'];
 setInterval(() => {
   const goForAScrollDeadLetter = goForAScrollLetters[getRandomZeroToMax(goForAScrollLetters.length - 1)];
   const aboutTitleParentDeadLetter = aboutTitleParentLetters[getRandomZeroToMax(aboutTitleParentLetters.length - 1)];
+  const contactTitleParentDeadLetter = contactTitleParentLetters[getRandomZeroToMax(contactTitleParentLetters.length - 1)];
 
   const flickeringLetter = setInterval(() => {
     const color = neonLetterColors[getRandomZeroToMax(neonLetterColors.length)];
@@ -176,6 +194,9 @@ setInterval(() => {
 
     aboutTitleParentDeadLetter.style.setProperty('color', color);
     aboutTitleParentDeadLetter.style.setProperty('text-shadow', textShadow);
+
+    contactTitleParentDeadLetter.style.setProperty('color', color);
+    contactTitleParentDeadLetter.style.setProperty('text-shadow', textShadow);
   }, getRandomZeroToMax(100));
 
   setTimeout(() => {
@@ -186,6 +207,9 @@ setInterval(() => {
 
     aboutTitleParentDeadLetter.style.setProperty('color', neonLetterColors[0]);
     aboutTitleParentDeadLetter.style.removeProperty('text-shadow');
+
+    contactTitleParentDeadLetter.style.setProperty('color', neonLetterColors[0]);
+    contactTitleParentDeadLetter.style.removeProperty('text-shadow');
   }, 1000);
   
 }, getRandomZeroToMax(4000));
