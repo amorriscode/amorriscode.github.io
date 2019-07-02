@@ -2,74 +2,73 @@ const sideNav = document.getElementById('side-nav');
 const mainGrid = document.getElementById('main-grid');
 
 const introSection = document.getElementById('intro');
-const brandDivider = introSection.getElementsByClassName('divider')[0];
 const introContainer = introSection.getElementsByClassName('section-container')[0];
+
+const brandDivider = introSection.getElementsByClassName('divider')[0];
+const brandDividerBoundingBox = brandDivider.getBoundingClientRect();
 const brandAmorrisContainer = introContainer.getElementsByClassName('amorris')[0];
+
 const brandCodeContainer = introContainer.getElementsByClassName('code')[0];
+const brandCodeContainerBoundingBox = brandCodeContainer.getBoundingClientRect();
+
 const positiveImpactContainer = introContainer.getElementsByClassName('positive-impact')[0];
+const positiveImpactContainerBoundingBox = positiveImpactContainer.getBoundingClientRect();
 const madeWithCodeContainer = introContainer.getElementsByClassName('made-with-code')[0];
 const triangles = document.getElementsByClassName('triangle');
+
 const goForAScroll = document.getElementById('go-for-a-scroll');
 const goForAScrollLetters = goForAScroll.getElementsByClassName('letter');
+
 const glitchables = document.getElementsByClassName('glitchable');
-
-const aboutSection = document.getElementById('about');
-const aboutTitleClips = aboutSection.getElementsByClassName('title')[0].getElementsByClassName('clip');
-const aboutTitleParentLetters = aboutTitleClips[0].getElementsByClassName('letter');
-const aboutContent = aboutSection.getElementsByClassName('content');
-
-const contactSection = document.getElementById('contact');
-const contactTitleClips = contactSection.getElementsByClassName('title')[0].getElementsByClassName('clip');
-const contactTitleParentLetters = contactTitleClips[0].getElementsByClassName('letter');
-const contactContent = contactSection.getElementsByClassName('content');
 
 // Randomize
 const getRandomZeroToMax = max => Math.floor(Math.random() * max);
 
+let xOffset = 0;
+
 // Change vertical scroll to horizontal
 document.addEventListener('mousewheel', event => {
-  const scrollAmount = event.deltaY || event.deltaX;
-  window.scroll(window.pageXOffset + scrollAmount, 0); 
-  event.preventDefault();
+  xOffset += event.deltaY || event.deltaX;
+  xOffset = xOffset < 0 ? 0 : xOffset;
 
   // Adjust divider height
-  const computedHeight = (window.pageXOffset !== 0)
-    ? `${window.pageXOffset * 2}px`
+  const computedHeight = (xOffset !== 0)
+    ? `${xOffset * 2}px`
     : '20px';
   brandDivider.style.setProperty('height', computedHeight);
 
   // Adjust divider position from top
-  const computedDividerPosition = (window.pageXOffset !== 0)
-    ? `-${window.pageXOffset - 10}px`
+  const computedDividerPosition = (xOffset !== 0)
+    ? `-${xOffset - 10}px`
     : '0px';
   brandDivider.style.setProperty('top', computedDividerPosition);
 
   // Move the intro out of the way
-  const computedIntroContainerPosition = (window.pageXOffset > 967)
-    ? `${aboutSection.offsetLeft - window.pageXOffset - 112}px`
-    : '25vw';
-  introContainer.style.setProperty('left', computedIntroContainerPosition);
+  // const computedIntroContainerPosition = (xOffset > (brandDividerBoundingBox.left + 602))
+  //   ? `${xOffset - 112}px`
+  //   : '25vw';
+  // introContainer.style.setProperty('left', computedIntroContainerPosition);
 
   // Clip go for a scroll section
-  const goForAScrollClipPath = `inset(0 ${window.pageXOffset}px 0 0)`;
+  const goForAScrollClipPath = `inset(0 ${xOffset}px 0 0)`;
   goForAScroll.style.setProperty('clip-path', goForAScrollClipPath);
 
   // Clip code in brand section
-  const brandClipPath = (window.pageXOffset < 967)
-    ? `inset(0 ${window.pageXOffset - (brandCodeContainer.offsetLeft + 802)}px 0 0)`
+  const brandClipPath = (xOffset < 967)
+    ? `inset(0 ${xOffset - (brandCodeContainer.offsetLeft + 802)}px 0 0)`
     : 'inset(0 85% 0 0)';
   brandCodeContainer.style.setProperty('clip-path', brandClipPath);
 
   // Clip intro section
-  const introClipPath = (window.pageXOffset < 967)
-    ? `inset(0 ${window.pageXOffset - (introContainer.offsetLeft + 18)}px 0 0)`
+  const introClipPath = (xOffset > positiveImpactContainerBoundingBox.left && xOffset < window.innerWidth - brandDividerBoundingBox.left)
+    ? `inset(0 ${xOffset - brandDividerBoundingBox.right}px 0 0)`
     : 'inset(0 85% 0 0)';
   positiveImpactContainer.style.setProperty('clip-path', introClipPath);
   madeWithCodeContainer.style.setProperty('clip-path', introClipPath);
 
   // Adjust the side nav positioning
-  const computedSideNavPositioning = (window.pageXOffset < window.innerWidth - 50)
-    ? `${window.pageXOffset - (window.innerWidth - 50)}px`
+  const computedSideNavPositioning = (xOffset < window.innerWidth - 50)
+    ? `${xOffset - (window.innerWidth - 50)}px`
     : '0';
   sideNav.style.setProperty('left', computedSideNavPositioning);
 
@@ -85,33 +84,6 @@ document.addEventListener('mousewheel', event => {
 
   // Scroll Tween Controller
   const controller = new ScrollMagic.Controller({ vertical: false });
-
-  // Tween About Me content in and fade intro text
-  const aboutContentTimeline = new TimelineMax();
-  aboutContentTimeline.add('start', 1)
-    .add(TweenMax.from(aboutTitleClips[1], 1, { y: -29, opacity: 0 }), 0)
-    .add(TweenMax.from(aboutTitleClips[2], 1, { y: -58, opacity: 0 }), 0)
-    .add(TweenMax.from(aboutTitleClips[3], 1, { y: -86, opacity: 0 }), 0)
-    .add(TweenMax.from(aboutContent, 1, { y: 500 }), 0)
-    .add(TweenMax.to(brandAmorrisContainer, 1, { opacity: 0 }).delay(1), 0)
-    .add(TweenMax.to(positiveImpactContainer, 1, { opacity: 0 }).delay(1), 0)
-    .add(TweenMax.to(madeWithCodeContainer, 1, { opacity: 0 }).delay(1), 0);
-  const aboutMeContentScene = new ScrollMagic.Scene({ triggerElement: '#about', duration: 500 })
-    .setTween(aboutContentTimeline)
-    .addTo(controller);
-
-  const contactContentTimeline = new TimelineMax();
-  contactContentTimeline.add('start', 1)
-    .add(TweenMax.from(contactTitleClips[1], 1, { y: -29, opacity: 0 }), 0)
-    .add(TweenMax.from(contactTitleClips[2], 1, { y: -58, opacity: 0 }), 0)
-    .add(TweenMax.from(contactTitleClips[3], 1, { y: -86, opacity: 0 }), 0)
-    .add(TweenMax.from(contactContent, 1, { y: 500 }), 0)
-    .add(TweenMax.to(brandAmorrisContainer, 1, { opacity: 0 }).delay(1), 0)
-    .add(TweenMax.to(positiveImpactContainer, 1, { opacity: 0 }).delay(1), 0)
-    .add(TweenMax.to(madeWithCodeContainer, 1, { opacity: 0 }).delay(1), 0);
-  const contactMeContentScene = new ScrollMagic.Scene({ triggerElement: '#contact', duration: 500 })
-    .setTween(contactContentTimeline)
-    .addTo(controller);
 
 const possibleCharacters = [
   'A','B','C','D','E','F','G',
@@ -172,16 +144,12 @@ setInterval(() => {
 setInterval(() => {
   brandDivider.style.setProperty('box-shadow', `0 0 ${getRandomZeroToMax(10)}px 0px #61FF00`);
   goForAScroll.style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
-  aboutTitleClips[0].style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
-  contactTitleClips[0].style.setProperty('text-shadow', `0 0 ${getRandomZeroToMax(10)}px #61FF00`);
 }, 50);
 
 const neonLetterColors = ['#A6F673', '#1F1837'];
 
 setInterval(() => {
   const goForAScrollDeadLetter = goForAScrollLetters[getRandomZeroToMax(goForAScrollLetters.length - 1)];
-  const aboutTitleParentDeadLetter = aboutTitleParentLetters[getRandomZeroToMax(aboutTitleParentLetters.length - 1)];
-  const contactTitleParentDeadLetter = contactTitleParentLetters[getRandomZeroToMax(contactTitleParentLetters.length - 1)];
 
   const flickeringLetter = setInterval(() => {
     const color = neonLetterColors[getRandomZeroToMax(neonLetterColors.length)];
@@ -191,12 +159,6 @@ setInterval(() => {
 
     goForAScrollDeadLetter.style.setProperty('color', color);
     goForAScrollDeadLetter.style.setProperty('text-shadow', textShadow);
-
-    aboutTitleParentDeadLetter.style.setProperty('color', color);
-    aboutTitleParentDeadLetter.style.setProperty('text-shadow', textShadow);
-
-    contactTitleParentDeadLetter.style.setProperty('color', color);
-    contactTitleParentDeadLetter.style.setProperty('text-shadow', textShadow);
   }, getRandomZeroToMax(100));
 
   setTimeout(() => {
@@ -204,12 +166,6 @@ setInterval(() => {
   
     goForAScrollDeadLetter.style.setProperty('color', neonLetterColors[0]);
     goForAScrollDeadLetter.style.removeProperty('text-shadow');
-
-    aboutTitleParentDeadLetter.style.setProperty('color', neonLetterColors[0]);
-    aboutTitleParentDeadLetter.style.removeProperty('text-shadow');
-
-    contactTitleParentDeadLetter.style.setProperty('color', neonLetterColors[0]);
-    contactTitleParentDeadLetter.style.removeProperty('text-shadow');
   }, 1000);
   
 }, getRandomZeroToMax(4000));
