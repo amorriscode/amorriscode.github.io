@@ -24,11 +24,24 @@ const glitchables = document.getElementsByClassName('glitchable');
 // Randomize
 const getRandomZeroToMax = max => Math.floor(Math.random() * max);
 
+// Fake horizontal scroll
 let xOffset = 0;
+
+// Clip path math
+const getClipPathOffset = (boundingBox) => {
+  let clipPathOffset = '0px';
+  if (window.innerWidth - xOffset < brandDividerBoundingBox.x) {
+    clipPathOffset = '85%';
+  } else if (window.innerWidth - xOffset < boundingBox.right) {
+    clipPathOffset = `${Math.abs(window.innerWidth - xOffset - boundingBox.right)}px`;
+  }
+
+  return clipPathOffset;
+}
 
 // Change vertical scroll to horizontal
 document.addEventListener('mousewheel', event => {
-  xOffset += event.deltaY || event.deltaX;
+  xOffset += event.deltaY * 2;
   xOffset = xOffset < 0 ? 0 : xOffset;
 
   // Adjust divider height
@@ -44,25 +57,23 @@ document.addEventListener('mousewheel', event => {
   brandDivider.style.setProperty('top', computedDividerPosition);
 
   // Move the intro out of the way
-  // const computedIntroContainerPosition = (xOffset > (brandDividerBoundingBox.left + 602))
-  //   ? `${xOffset - 112}px`
-  //   : '25vw';
-  // introContainer.style.setProperty('left', computedIntroContainerPosition);
+  const computedIntroContainerPosition = (window.innerWidth - xOffset < brandDividerBoundingBox.x)
+    ? `${window.innerWidth - xOffset - 117}px`
+    : '25vw';
+  introContainer.style.setProperty('left', computedIntroContainerPosition);
 
   // Clip go for a scroll section
   const goForAScrollClipPath = `inset(0 ${xOffset}px 0 0)`;
   goForAScroll.style.setProperty('clip-path', goForAScrollClipPath);
-
+  
   // Clip code in brand section
-  const brandClipPath = (xOffset < 967)
-    ? `inset(0 ${xOffset - (brandCodeContainer.offsetLeft + 802)}px 0 0)`
-    : 'inset(0 85% 0 0)';
+  const brandClipPathOffset = getClipPathOffset(brandCodeContainerBoundingBox);
+  const brandClipPath = `inset(0 ${brandClipPathOffset} 0 0)`;
   brandCodeContainer.style.setProperty('clip-path', brandClipPath);
 
   // Clip intro section
-  const introClipPath = (xOffset > positiveImpactContainerBoundingBox.left && xOffset < window.innerWidth - brandDividerBoundingBox.left)
-    ? `inset(0 ${xOffset - brandDividerBoundingBox.right}px 0 0)`
-    : 'inset(0 85% 0 0)';
+  const introClipPathOffset = getClipPathOffset(positiveImpactContainerBoundingBox);
+  const introClipPath = `inset(0 ${introClipPathOffset} 0 0)`;
   positiveImpactContainer.style.setProperty('clip-path', introClipPath);
   madeWithCodeContainer.style.setProperty('clip-path', introClipPath);
 
