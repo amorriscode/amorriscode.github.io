@@ -47,6 +47,7 @@ body {
 #side-nav .grid .social a:hover {
   color: #A6F673;
   text-shadow: 0 0 5px #61FF00;
+  transition: text-shadow 0.5s;
 }
 
 #main-grid {
@@ -186,6 +187,23 @@ body {
   padding: 12px;
   color: #A6F673;
   font-size: 12px;
+}
+
+#about-me {
+  display: none;
+  padding: 250px;
+  width: 50vw;
+  font-size: 1.5rem;
+}
+
+#about-me a {
+  text-decoration: none;
+  color: #A6F673;
+}
+
+#about-me a:hover {
+  text-shadow: 0 0 5px #61FF00;
+  transition: text-shadow 0.5s;
 }
 
 .glitch {

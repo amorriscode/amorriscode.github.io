@@ -19,6 +19,8 @@ const triangles = document.getElementsByClassName('triangle');
 const goForAScroll = document.getElementById('go-for-a-scroll');
 const goForAScrollLetters = goForAScroll.getElementsByClassName('letter');
 
+const aboutMeSection = document.getElementById('about-me');
+
 const glitchables = document.getElementsByClassName('glitchable');
 
 // Randomize
@@ -48,11 +50,13 @@ introTimeline.pause()
 
 // Change vertical scroll to horizontal
 document.addEventListener('mousewheel', event => {
-  xOffset += event.deltaY * 4;
+  xOffset += event.deltaY;
   xOffset = xOffset < 0 ? 0 : xOffset;
 
+  const hasScrolledPastDivider = window.innerWidth - xOffset < brandDividerBoundingBox.x;
+
+  // Adjust the gradient in the background
   const darkGradientPercentage = xOffset > 600 ? xOffset / 6 : 100;
-  console.log(darkGradientPercentage);
   introSection.style.setProperty('background', `linear-gradient(270deg, rgba(31,24,55,1) ${xOffset / 10}%, rgba(101,40,90,1) ${darkGradientPercentage}%)`);
 
   // Adjust divider height
@@ -68,7 +72,7 @@ document.addEventListener('mousewheel', event => {
   brandDivider.style.setProperty('top', computedDividerPosition);
 
   // Move the intro out of the way
-  const computedIntroContainerPosition = (window.innerWidth - xOffset < brandDividerBoundingBox.x)
+  const computedIntroContainerPosition = (hasScrolledPastDivider)
     ? `${window.innerWidth - xOffset - 117}px`
     : '25vw';
   introContainer.style.setProperty('left', computedIntroContainerPosition);
@@ -89,11 +93,17 @@ document.addEventListener('mousewheel', event => {
   madeWithCodeContainer.style.setProperty('clip-path', introClipPath);
 
   // Progress the introScene
-  if (window.innerWidth - xOffset < brandDividerBoundingBox.x) {
+  if (hasScrolledPastDivider) {
     introTimeline.totalProgress(xOffset / 1000 - 1);
   } else {
     introTimeline.totalProgress(0);
   }
+
+  // Adjust About Me Section
+  const computedAboutMeDisplay = (xOffset < window.innerWidth - 50)
+    ? `none`
+    : 'block';
+  aboutMeSection.style.setProperty('display', computedAboutMeDisplay);
 
   // Adjust the side nav positioning
   const computedSideNavPositioning = (xOffset < window.innerWidth - 50)
