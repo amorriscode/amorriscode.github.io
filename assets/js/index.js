@@ -39,6 +39,13 @@ const getClipPathOffset = (boundingBox) => {
   return clipPathOffset;
 }
 
+// Fade intro text
+const introTimeline = new TimelineMax();
+introTimeline.pause()
+  .add(TweenMax.to(brandAmorrisContainer, 1, { opacity: 0 }).delay(0.5), 0)
+  .add(TweenMax.to(positiveImpactContainer, 1, { opacity: 0 }).delay(0.5), 0)
+  .add(TweenMax.to(madeWithCodeContainer, 1, { opacity: 0 }).delay(0.5), 0);
+
 // Change vertical scroll to horizontal
 document.addEventListener('mousewheel', event => {
   xOffset += event.deltaY * 2;
@@ -77,6 +84,13 @@ document.addEventListener('mousewheel', event => {
   positiveImpactContainer.style.setProperty('clip-path', introClipPath);
   madeWithCodeContainer.style.setProperty('clip-path', introClipPath);
 
+  // Progress the introScene
+  if (window.innerWidth - xOffset < brandDividerBoundingBox.x) {
+    introTimeline.totalProgress(xOffset / 1000 - 1);
+  } else {
+    introTimeline.totalProgress(0);
+  }
+
   // Adjust the side nav positioning
   const computedSideNavPositioning = (xOffset < window.innerWidth - 50)
     ? `${xOffset - (window.innerWidth - 50)}px`
@@ -91,10 +105,7 @@ document.addEventListener('mousewheel', event => {
     brandDivider.style.setProperty('left', '0');
     brandDivider.style.setProperty('position', 'absolute');
   }
-});
-
-  // Scroll Tween Controller
-  const controller = new ScrollMagic.Controller({ vertical: false });
+});  
 
 const possibleCharacters = [
   'A','B','C','D','E','F','G',
