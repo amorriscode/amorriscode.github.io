@@ -51,7 +51,6 @@ body {
 
 #main-grid {
   display: grid;
-  grid-template-areas: "intro about interests values contact";
 }
 
 #main-grid > section {
@@ -118,7 +117,7 @@ body {
 
 #intro {
   height: 100vh;
-  background: #1F1837;
+  background-color: #1F1837;
   background: linear-gradient(270deg, rgba(31,24,55,1) 0%, rgba(101,40,90,1) 100%);
 }
 
@@ -243,20 +242,4 @@ body {
   100% {
     clip-path: inset(150px 1px);
   }
-}
-
-#about {
-  z-index: -1;
-}
-
-#interests {
-  z-index: -1;
-}
-
-#values {
-  z-index: -1;
-}
-
-#contact {
-  z-index: -1;
 }

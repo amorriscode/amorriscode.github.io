@@ -48,8 +48,12 @@ introTimeline.pause()
 
 // Change vertical scroll to horizontal
 document.addEventListener('mousewheel', event => {
-  xOffset += event.deltaY * 2;
+  xOffset += event.deltaY * 4;
   xOffset = xOffset < 0 ? 0 : xOffset;
+
+  const darkGradientPercentage = xOffset > 600 ? xOffset / 6 : 100;
+  console.log(darkGradientPercentage);
+  introSection.style.setProperty('background', `linear-gradient(270deg, rgba(31,24,55,1) ${xOffset / 10}%, rgba(101,40,90,1) ${darkGradientPercentage}%)`);
 
   // Adjust divider height
   const computedHeight = (xOffset !== 0)
