@@ -71,6 +71,10 @@ header .contact-container .contact-list li span {
   text-align: center ;
 }
 
+header .summary-container { 
+  margin-top: 10px;
+}
+
 
 /* main */
 #main {
@@ -149,7 +153,8 @@ header .contact-container .contact-list li span {
 .experience .detail {
   font-size: 14px ;
 }
-.experience .tags {
+.experience .tags,
+.certifications .detail {
   font-size: 12px ;
   color: #999 ;
 }
